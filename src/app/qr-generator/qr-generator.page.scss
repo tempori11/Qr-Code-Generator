@@ -1,0 +1,21 @@
+.ion-card-content {
+  padding-left: 100px;
+  --color: blue;
+}
+
+.qrCard {
+  padding-left: 25px;
+}
+
+.ion-color-primary {
+  background-image: linear-gradient(to bottom right, black, blue);
+}
+
+::ng-deep .ion-list.custom.md.list-md.hydrated {
+  --background: none;
+}
+
+ion-card.ion-color .ion-inherit-color,
+ion-card-header.ion-color .ion-inherit-color {
+  color: white;
+}

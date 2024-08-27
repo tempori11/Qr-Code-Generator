@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>QR Code Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-item>
+    <ion-label position="floating">Enter Text to Generate QR Code</ion-label>
+    <ion-input [(ngModel)]="qrData"></ion-input>
+    <ion-label>Welcome User.</ion-label>
+  </ion-item> -->
+  <ion-card color="primary" class="generator_card">
+    <ion-card-header>
+      <ion-card-title class="info_title">User Info</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="userData">
+      <ion-list class="custom">
+        <ion-item class="custom">
+          <ion-label>Name : {{userData.name}}</ion-label>
+        </ion-item>
+
+        <ion-item class="custom">
+          <ion-label>E-Mail : {{userData.email}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="qrCard">
+    <div class="qrcode-container" *ngIf="qrData">
+      <qrcode
+        [qrdata]="qrData"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+  </ion-card>
+</ion-content>
+
+<!-- <div *ngIf="userData">
+  <p>Name: {{ userData.name }}</p>
+  <p>Email: {{ userData.email }}</p>
+  <p>Balance: {{ userData.balance }}</p>
+  <p>UID: {{ userData.uid }}</p>
+</div> -->

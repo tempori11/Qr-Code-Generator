@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Balance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="addBalanceForm" (ngSubmit)="addBalance()">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input type="number" formControlName="amount"></ion-input>
+          </ion-item>
+          <ion-button
+            expand="full"
+            type="submit"
+            [disabled]="addBalanceForm.invalid"
+            >Add</ion-button
+          >
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
